@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Wayfair – Product Discovery & PDP Modernization | Mandy Zhang</title>
+    <meta
+      name="description"
+      content="Wayfair product discovery and PDP modernization – UI/UX and frontend engineering case study by Mandy Zhang."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- 简单的内联样式，让页面干净一点 -->
+    <style>
+      body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #050816;
+        color: #f5f5f5;
+      }
+
+      .page {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 32px 16px 64px;
+      }
+
+      .badge {
+        display: inline-block;
+        padding: 4px 10px;
+        border-radius: 999px;
+        font-size: 12px;
+        background: rgba(0, 128, 255, 0.2);
+        color: #9bd1ff;
+        margin-bottom: 12px;
+      }
+
+      h1 {
+        font-size: 32px;
+        margin-bottom: 8px;
+      }
+
+      h2 {
+        font-size: 20px;
+        margin-top: 32px;
+        margin-bottom: 8px;
+      }
+
+      h3 {
+        font-size: 16px;
+        margin-top: 20px;
+        margin-bottom: 6px;
+      }
+
+      p {
+        line-height: 1.6;
+        margin-top: 8px;
+        margin-bottom: 8px;
+      }
+
+      ul {
+        margin-top: 4px;
+        margin-bottom: 8px;
+        padding-left: 20px;
+      }
+
+      li {
+        margin-bottom: 4px;
+      }
+
+      .meta {
+        font-size: 14px;
+        color: #b3b3b3;
+        margin-bottom: 16px;
+      }
+
+      .pill-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 6px;
+        margin-bottom: 10px;
+      }
+
+      .pill {
+        font-size: 11px;
+        padding: 3px 8px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      .back-link {
+        display: inline-block;
+        margin-top: 24px;
+        font-size: 14px;
+        color: #66b3ff;
+        text-decoration: none;
+      }
+
+      .back-link:hover {
+        text-decoration: underline;
+      }
+
+      hr {
+        border: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        margin: 24px 0;
+      }
+
+      @media (min-width: 768px) {
+        h1 {
+          font-size: 36px;
+        }
+
+        .meta {
+          font-size: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <span class="badge">Case Study</span>
+      <h1>Wayfair – Product Discovery & PDP Modernization</h1>
+      <p class="meta">
+        Role: Frontend / UI Engineer &nbsp;·&nbsp; Product: Large-scale
+        e-commerce product discovery & detail page experience
+      </p>
+
+      <h2>Overview</h2>
+      <p>
+        Wayfair is a high-traffic e-commerce platform where the product listing
+        page (PLP) and product detail page (PDP) have a direct impact on
+        discovery, conversion, and revenue. I worked on modernizing parts of the
+        PLP/PDP experience, focusing on React-based component architecture,
+        performance, and close collaboration with UX and product teams.
+      </p>
+      <p>
+        The goal was to make product discovery clearer on mobile and desktop,
+        improve accessibility, and support continuous experimentation through
+        A/B tests.
+      </p>
+
+      <h2>Tech Stack</h2>
+      <div class="pill-row">
+        <span class="pill">React</span>
+        <span class="pill">TypeScript</span>
+        <span class="pill">Next.js / SSR</span>
+        <span class="pill">GraphQL</span>
+        <span class="pill">Apollo Client</span>
+        <span class="pill">Design System Components</span>
+        <span class="pill">A/B Testing & Feature Flags</span>
+      </div>
+
+      <h2>My Responsibilities</h2>
+      <ul>
+        <li>
+          Implemented and refactored PLP/PDP React components using the internal
+          design system, ensuring consistency and accessibility.
+        </li>
+        <li>
+          Worked with UX designers to translate Figma specs into responsive
+          layouts and interaction patterns that work well on both mobile and
+          desktop.
+        </li>
+        <li>
+          Integrated GraphQL data (via Apollo) for product details, inventory,
+          and personalization signals, while keeping the UI fast and resilient.
+        </li>
+        <li>
+          Helped set up and maintain experiment variants for A/B testing,
+          collaborating with product and analytics teams.
+        </li>
+      </ul>
+
+      <hr />
+
+      <h2>Design Process</h2>
+
+      <h3>1. Understanding the current experience</h3>
+      <p>
+        We started by reviewing the existing PLP and PDP flows and looking at
+        analytics and customer feedback. A few recurring issues surfaced:
+      </p>
+      <ul>
+        <li>
+          On mobile, key product information (price, delivery estimate, reviews)
+          was easy to miss.
+        </li>
+        <li>
+          The PDP layout had grown over time, making it harder to scan and
+          compare options.
+        </li>
+        <li>
+          Some core interactions (such as variant selection or adding to cart)
+          were not fully accessible via keyboard and screen readers.
+        </li>
+      </ul>
+
+      <h3>2. Collaborating on layouts & component structure</h3>
+      <p>
+        I worked closely with UX and product to break down the PLP/PDP into
+        modular sections: gallery, core product info, price & promotions,
+        delivery, and recommendations. We used the design system where possible,
+        and identified areas where new components were needed.
+      </p>
+      <p>
+        Before building, we aligned on:
+      </p>
+      <ul>
+        <li>The information hierarchy on different breakpoints.</li>
+        <li>
+          Which elements needed to remain visible as users scrolled (sticky
+          “Add to Cart” on mobile, for example).
+        </li>
+        <li>
+          Edge cases such as out-of-stock items, missing images, or limited-time
+          promos.
+        </li>
+      </ul>
+
+      <h3>3. Iterating through A/B testing</h3>
+      <p>
+        Once new components and layouts were implemented, they were rolled out
+        behind feature flags and tested as A/B experiments. I helped:
+      </p>
+      <ul>
+        <li>
+          Implement different layout variants for hero sections and information
+          blocks.
+        </li>
+        <li>
+          Add tracking hooks so that product and analytics teams could measure
+          behavior and conversion changes.
+        </li>
+        <li>
+          Refine the UI based on experiment results and qualitative feedback
+          from UX research sessions.
+        </li>
+      </ul>
+
+      <hr />
+
+      <h2>Engineering Details</h2>
+      <ul>
+        <li>
+          Used Next.js server-side rendering (SSR) / incremental static
+          regeneration to keep product pages indexable and fast, improving LCP
+          and SEO.
+        </li>
+        <li>
+          Built PDP sections as composable React components, wired with GraphQL
+          queries via Apollo, so individual pieces (e.g. delivery info,
+          recommendations) could evolve independently.
+        </li>
+        <li>
+          Ensured components followed accessibility best practices (ARIA
+          attributes, keyboard navigation, focus management) to meet internal
+          standards.
+        </li>
+        <li>
+          Participated in code reviews and worked with QA to validate behavior
+          across browsers and devices.
+        </li>
+      </ul>
+
+      <h2>Impact & Learnings</h2>
+      <p>
+        The refactored PLP/PDP experience made it easier for customers to scan
+        and evaluate products, particularly on mobile, and gave the business a
+        more flexible foundation for ongoing experimentation.
+      </p>
+      <p>
+        The project reinforced how important it is to:
+      </p>
+      <ul>
+        <li>Keep the visual hierarchy aligned with user decision-making.</li>
+        <li>
+          Treat the design system as a shared language between designers and
+          engineers.
+        </li>
+        <li>
+          Use experiments not only to optimize metrics, but also to validate UX
+          assumptions and guide future iterations.
+        </li>
+      </ul>
+
+      <a class="back-link" href="/react-portfolio/#work">← Back to portfolio</a>
+    </div>
+  </body>
+</html>
