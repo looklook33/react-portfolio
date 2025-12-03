@@ -1,6 +1,6 @@
 import React from "react";
 
-//import stock
+// import project thumbnails (你之后可以换成真实截图或 logo)
 import stock from "../img/image1.jpg";
 import stock1 from "../img/image2.jpg";
 import stock2 from "../img/image3.jpg";
@@ -18,378 +18,262 @@ class Portfolio extends React.Component {
               <div className="title-box text-center">
                 <h3 className="title-a">Portfolio</h3>
                 <p className="subtitle-a">
-                  Incididunt nostrud id aute culpa excepteur pariatur consequat
-                  elit culpa nulla enim anim incididunt.
+                  Selected projects showcasing my UI/UX work, design process,
+                  and the React-focused engineering stack I use.
                 </p>
                 <div className="line-mf"></div>
               </div>
             </div>
           </div>
+
           <div className="row">
+            {/* Snorkel AI */}
             <div className="col-md-4">
               <div className="work-box">
-                <a href={stock} data-lightbox="gallery-vmarine">
-                  <div className="work-img">
-                    <img src={stock} alt="" className="img-fluid" />
-                  </div>
-                  <div className="work-content">
-                    <div className="row">
-                      <div className="col-sm-8">
-                        <h2 className="w-title">Lorem Ipsum</h2>
-                        <div className="w-more">
-                          <span className="w-ctegory">
-                            HTML5 CSS3 Bootstrap ReactJS
-                          </span>
-                        </div>
-                      </div>
-                      <div className="col-sm-4">
-                        <div className="w-like">
-                          <span className="ion-ios-plus-outline"></span>
-                        </div>
+                <div className="work-img">
+                  <img
+                    src={stock}
+                    alt="Snorkel AI Labeling Platform"
+                    className="img-fluid"
+                  />
+                </div>
+                <div className="work-content">
+                  <div className="row">
+                    <div className="col-sm-12">
+                      <h2 className="w-title">
+                        Snorkel AI – Multi-Stage Labeling & Dataset Dashboard
+                      </h2>
+                      <div className="w-more">
+                        <span className="w-ctegory">
+                          Tech Stack: React · TypeScript · Redux Toolkit ·
+                          GraphQL · Node.js · PostgreSQL
+                        </span>
+                        <br />
+                        <span className="w-ctegory">
+                          Designed and built labeling workflows, review queues,
+                          and progress dashboards for enterprise AI customers,
+                          working closely with ML engineers and designers.
+                        </span>
+                        <br />
+                        <a
+                          href={process.env.PUBLIC_URL + "/case-studies/snorkel-ai.html"}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-ctegory"
+                          style={{ fontWeight: "bold", textDecoration: "underline" }}
+                        >
+                          View Full Case Study
+                        </a>
+                        <br />
+                        <span className="w-ctegory">
+                          (Internal product – code is private.)
+                        </span>
                       </div>
                     </div>
                   </div>
-                </a>
-                <a
-                  href={stock1}
-                  data-lightbox="gallery-vmarine"
-                  style={{ display: "none" }}
-                >
-                  jsx-a11y/anchor-has-content warning
-                </a>
-                <a
-                  href={stock2}
-                  data-lightbox="gallery-vmarine"
-                  style={{ display: "none" }}
-                >
-                  jsx-a11y/anchor-has-content warning
-                </a>
-                <a
-                  href={stock3}
-                  data-lightbox="gallery-vmarine"
-                  style={{ display: "none" }}
-                >
-                  jsx-a11y/anchor-has-content warning
-                </a>
-                <a
-                  href={stock4}
-                  data-lightbox="gallery-vmarine"
-                  style={{ display: "none" }}
-                >
-                  jsx-a11y/anchor-has-content warning
-                </a>
-                <a
-                  href={stock5}
-                  data-lightbox="gallery-vmarine"
-                  style={{ display: "none" }}
-                >
-                  jsx-a11y/anchor-has-content warning
-                </a>
+                </div>
               </div>
             </div>
+
+            {/* Wayfair */}
             <div className="col-md-4">
               <div className="work-box">
-                <a href={stock} data-lightbox="gallery-aguadeluz">
-                  <div className="work-img">
-                    <img src={stock} alt="" className="img-fluid" />
-                  </div>
-                  <div className="work-content">
-                    <div className="row">
-                      <div className="col-sm-8">
-                        <h2 className="w-title">Lorem Ipsum</h2>
-                        <div className="w-more">
-                          <span className="w-ctegory">
-                            HTML5 CSS3 Bootstrap Webpack SmoothScrolling
-                            VanillaJS
-                          </span>{" "}
-                        </div>
-                      </div>
-                      <div className="col-sm-4">
-                        <div className="w-like">
-                          <span className="ion-ios-plus-outline"></span>
-                        </div>
+                <div className="work-img">
+                  <img
+                    src={stock1}
+                    alt="Wayfair Product Experience"
+                    className="img-fluid"
+                  />
+                </div>
+                <div className="work-content">
+                  <div className="row">
+                    <div className="col-sm-12">
+                      <h2 className="w-title">
+                        Wayfair – Product Discovery & PDP Modernization
+                      </h2>
+                      <div className="w-more">
+                        <span className="w-ctegory">
+                          Tech Stack: React · TypeScript · Next.js · GraphQL ·
+                          Design System
+                        </span>
+                        <br />
+                        <span className="w-ctegory">
+                          Implemented and iterated on product listing and detail
+                          page components, collaborating with UX and product to
+                          optimize layout, accessibility, and experiment
+                          variants.
+                        </span>
+                        <br />
+                        <a
+                          href={process.env.PUBLIC_URL + "/case-studies/wayfair-pdp.html"}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-ctegory"
+                          style={{ fontWeight: "bold", textDecoration: "underline" }}
+                        >
+                          View Full Case Study
+                        </a>
+                        <br />
+                        <span className="w-ctegory">
+                          (Commercial platform – code is private.)
+                        </span>
                       </div>
                     </div>
                   </div>
-                </a>
-                <a
-                  href={stock1}
-                  data-lightbox="gallery-aguadeluz"
-                  style={{ display: "none" }}
-                >
-                  jsx-a11y/anchor-has-content warning
-                </a>
-                <a
-                  href={stock2}
-                  data-lightbox="gallery-aguadeluz"
-                  style={{ display: "none" }}
-                >
-                  jsx-a11y/anchor-has-content warning
-                </a>
-                <a
-                  href={stock3}
-                  data-lightbox="gallery-aguadeluz"
-                  style={{ display: "none" }}
-                >
-                  jsx-a11y/anchor-has-content warning
-                </a>
-                <a
-                  href={stock4}
-                  data-lightbox="gallery-aguadeluz"
-                  style={{ display: "none" }}
-                >
-                  jsx-a11y/anchor-has-content warning
-                </a>
-                <a
-                  href={stock5}
-                  data-lightbox="gallery-aguadeluz"
-                  style={{ display: "none" }}
-                >
-                  jsx-a11y/anchor-has-content warning
-                </a>
+                </div>
               </div>
             </div>
+
+            {/* Smart Budget Dashboard
             <div className="col-md-4">
               <div className="work-box">
-                <a href={stock} data-lightbox="gallery-todo">
-                  <div className="work-img">
-                    <img src={stock} alt="" className="img-fluid" />
-                  </div>
-                  <div className="work-content">
-                    <div className="row">
-                      <div className="col-sm-8">
-                        <h2 className="w-title">Lorem Ipsum</h2>
-                        <div className="w-more">
-                          <span className="w-ctegory">
-                            HTML5 CSS3 Bootstrap Webpack ReactJS
-                          </span>
-                          {/*} / <span className="w-date">18 Sep. 2018</span>*/}
-                        </div>
-                      </div>
-                      <div className="col-sm-4">
-                        <div className="w-like">
-                          <span className="ion-ios-plus-outline"></span>
-                        </div>
+                <div className="work-img">
+                  <img
+                    src={stock2}
+                    alt="Smart Budget Dashboard"
+                    className="img-fluid"
+                  />
+                </div>
+                <div className="work-content">
+                  <div className="row">
+                    <div className="col-sm-12">
+                      <h2 className="w-title">Smart Budget Dashboard</h2>
+                      <div className="w-more">
+                        <span className="w-ctegory">
+                          Tech Stack: React · TypeScript · React Router · REST
+                          API · PostgreSQL
+                        </span>
+                        <br />
+                        <span className="w-ctegory">
+                          A responsive budgeting app with rollover logic and
+                          category breakdowns, designed to replace complex
+                          spreadsheets with a clear, visual dashboard.
+                        </span>
+                        <br />
+                        <a
+                          href="/case-studies/smart-budget.html"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-ctegory" 
+                          style={{ fontWeight: "bold", textDecoration: "underline" }}
+                        >
+                          View Full Case Study
+                        </a>
+                        <br />
+                        <a
+                          href="https://github.com/looklook33/smart-budget-app"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-ctegory"
+                        >
+                          View Code on GitHub
+                        </a>
                       </div>
                     </div>
                   </div>
-                </a>
-                <a
-                  href={stock1}
-                  data-lightbox="gallery-todo"
-                  style={{ display: "none" }}
-                >
-                  jsx-a11y/anchor-has-content warning
-                </a>
-                <a
-                  href={stock2}
-                  data-lightbox="gallery-todo"
-                  style={{ display: "none" }}
-                >
-                  jsx-a11y/anchor-has-content warning
-                </a>
-                <a
-                  href={stock3}
-                  data-lightbox="gallery-todo"
-                  style={{ display: "none" }}
-                >
-                  jsx-a11y/anchor-has-content warning
-                </a>
-                <a
-                  href={stock4}
-                  data-lightbox="gallery-todo"
-                  style={{ display: "none" }}
-                >
-                  jsx-a11y/anchor-has-content warning
-                </a>
-                <a
-                  href={stock5}
-                  data-lightbox="gallery-todo"
-                  style={{ display: "none" }}
-                >
-                  jsx-a11y/anchor-has-content warning
-                </a>
+                </div>
               </div>
-            </div>
+            </div> */}
+
+            {/* Gym Scheduling System
             <div className="col-md-4">
               <div className="work-box">
-                <a href={stock} data-lightbox="gallery-medlingos">
-                  <div className="work-img">
-                    <img src={stock} alt="" className="img-fluid" />
-                  </div>
-                  <div className="work-content">
-                    <div className="row">
-                      <div className="col-sm-8">
-                        <h2 className="w-title">Lorem Ipsum</h2>
-                        <div className="w-more">
-                          <span className="w-ctegory">
-                            Bootstrap ReactJS GoogleAPI
-                          </span>
-                        </div>
-                      </div>
-                      <div className="col-sm-4">
-                        <div className="w-like">
-                          <span className="ion-ios-plus-outline"></span>
-                        </div>
+                <div className="work-img">
+                  <img
+                    src={stock3}
+                    alt="Gym Scheduling System"
+                    className="img-fluid"
+                  />
+                </div>
+                <div className="work-content">
+                  <div className="row">
+                    <div className="col-sm-12">
+                      <h2 className="w-title">Gym Scheduling System</h2>
+                      <div className="w-more">
+                        <span className="w-ctegory">
+                          Tech Stack: React · Redux · Flask · SQLAlchemy ·
+                          PostgreSQL
+                        </span>
+                        <br />
+                        <span className="w-ctegory">
+                          Multi-role web app for members, trainers, and
+                          managers to view and manage gym schedules with
+                          role-based UI and booking flows.
+                        </span>
+                        <br />
+                        <a
+                          href="/case-studies/gym-schedule.html"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-ctegory"
+                          style={{ fontWeight: "bold", textDecoration: "underline" }}
+                        >
+                          View Full Case Study
+                        </a>
+                        <br />
+                        <a
+                          href="https://github.com/looklook33/gym-scheduling-app"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-ctegory"
+                        >
+                          View Code on GitHub
+                        </a>
                       </div>
                     </div>
                   </div>
-                </a>
-                <a
-                  href={stock1}
-                  data-lightbox="gallery-medlingos"
-                  style={{ display: "none" }}
-                >
-                  jsx-a11y/anchor-has-content warning
-                </a>
-                <a
-                  href={stock2}
-                  data-lightbox="gallery-medlingos"
-                  style={{ display: "none" }}
-                >
-                  jsx-a11y/anchor-has-content warning
-                </a>
-                <a
-                  href={stock3}
-                  data-lightbox="gallery-medlingos"
-                  style={{ display: "none" }}
-                >
-                  jsx-a11y/anchor-has-content warning
-                </a>
-                <a
-                  href={stock4}
-                  data-lightbox="gallery-medlingos"
-                  style={{ display: "none" }}
-                >
-                  jsx-a11y/anchor-has-content warning
-                </a>
-                <a
-                  href={stock5}
-                  data-lightbox="gallery-medlingos"
-                  style={{ display: "none" }}
-                >
-                  jsx-a11y/anchor-has-content warning
-                </a>
+                </div>
               </div>
-            </div>
+            </div> */}
+
+            {/* ABNB Project */}
             <div className="col-md-4">
               <div className="work-box">
-                <a href={stock} data-lightbox="gallery-smth">
-                  <div className="work-img">
-                    <img src={stock} alt="" className="img-fluid" />
-                  </div>
-                  <div className="work-content">
-                    <div className="row">
-                      <div className="col-sm-8">
-                        <h2 className="w-title">Lorem Ipsum</h2>
-                        <div className="w-more">
-                          <span className="w-ctegory">MERN</span>
-                        </div>
-                      </div>
-                      <div className="col-sm-4">
-                        <div className="w-like">
-                          <span className="ion-ios-plus-outline"></span>
-                        </div>
+                <div className="work-img">
+                  <img
+                    src={stock4}
+                    alt="ABNB Listings App"
+                    className="img-fluid"
+                  />
+                </div>
+                <div className="work-content">
+                  <div className="row">
+                    <div className="col-sm-12">
+                      <h2 className="w-title">ABNB – Airbnb-style Listings</h2>
+                      <div className="w-more">
+                        <span className="w-ctegory">
+                          Tech Stack: React · React Router · Node.js · Express ·
+                          PostgreSQL
+                        </span>
+                        <br />
+                        <span className="w-ctegory">
+                          Property listings app with search, filters, and
+                          detail pages, focused on clear hierarchy and
+                          mobile-friendly booking experience.
+                        </span>
+                        <br />
+                        <a
+                          href="/case-studies/abnb.html"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-ctegory"
+                          style={{ fontWeight: "bold", textDecoration: "underline" }}
+                        >
+                          View Full Case Study
+                        </a>
+                        <br />
+                        <a
+                          href="https://github.com/looklook33/ABNB-Project"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-ctegory"
+                        >
+                          View Code on GitHub
+                        </a>
                       </div>
                     </div>
                   </div>
-                </a>
-                <a
-                  href={stock1}
-                  data-lightbox="gallery-smth"
-                  style={{ display: "none" }}
-                >
-                  jsx-a11y/anchor-has-content warning
-                </a>
-                <a
-                  href={stock2}
-                  data-lightbox="gallery-smth"
-                  style={{ display: "none" }}
-                >
-                  jsx-a11y/anchor-has-content warning
-                </a>
-                <a
-                  href={stock3}
-                  data-lightbox="gallery-smth"
-                  style={{ display: "none" }}
-                >
-                  jsx-a11y/anchor-has-content warning
-                </a>
-                <a
-                  href={stock4}
-                  data-lightbox="gallery-smth"
-                  style={{ display: "none" }}
-                >
-                  jsx-a11y/anchor-has-content warning
-                </a>
-                <a
-                  href={stock5}
-                  data-lightbox="gallery-smth"
-                  style={{ display: "none" }}
-                >
-                  jsx-a11y/anchor-has-content warning
-                </a>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="work-box">
-                <a href={stock} data-lightbox="gallery-mf">
-                  <div className="work-img">
-                    <img src={stock} alt="" className="img-fluid" />
-                  </div>
-                  <div className="work-content">
-                    <div className="row">
-                      <div className="col-sm-8">
-                        <h2 className="w-title">Lorem Ipsum</h2>
-                        <div className="w-more">
-                          <span className="w-ctegory">
-                            HTML5 CSS3 Bootstrap MERN
-                          </span>
-                        </div>
-                      </div>
-                      <div className="col-sm-4">
-                        <div className="w-like">
-                          <span className="ion-ios-plus-outline"></span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-                <a
-                  href={stock1}
-                  data-lightbox="gallery-mf"
-                  style={{ display: "none" }}
-                >
-                  jsx-a11y/anchor-has-content warning
-                </a>
-                <a
-                  href={stock2}
-                  data-lightbox="gallery-mf"
-                  style={{ display: "none" }}
-                >
-                  jsx-a11y/anchor-has-content warning
-                </a>
-                <a
-                  href={stock3}
-                  data-lightbox="gallery-mf"
-                  style={{ display: "none" }}
-                >
-                  jsx-a11y/anchor-has-content warning
-                </a>
-                <a
-                  href={stock4}
-                  data-lightbox="gallery-mf"
-                  style={{ display: "none" }}
-                >
-                  jsx-a11y/anchor-has-content warning
-                </a>
-                <a
-                  href={stock5}
-                  data-lightbox="gallery-mf"
-                  style={{ display: "none" }}
-                >
-                  jsx-a11y/anchor-has-content warning
-                </a>
+                </div>
               </div>
             </div>
           </div>

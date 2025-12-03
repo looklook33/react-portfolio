@@ -6,55 +6,70 @@ class About extends React.Component {
     super();
     this.state = {
       skills: [
-        { id: "HTML5_skill", content: "HTML5", porcentage: "80%", value: "80" },
-        { id: "CSS3_skill", content: "CSS3", porcentage: "75%", value: "75" },
         {
-          id: "JavaScript_skill",
-          content: "JavaScript",
+          id: "ReactTS_skill",
+          content: "React & TypeScript",
           porcentage: "90%",
           value: "90"
         },
-        { id: "PHP_skill", content: "PHP", porcentage: "70%", value: "70" },
         {
-          id: "ReactJS_skill",
-          content: "ReactJS",
+          id: "JS_skill",
+          content: "JavaScript (ES6+)",
+          porcentage: "90%",
+          value: "90"
+        },
+        {
+          id: "HTMLCSS_skill",
+          content: "HTML5 & CSS3",
+          porcentage: "85%",
+          value: "85"
+        },
+        {
+          id: "Node_skill",
+          content: "Node.js & Express",
           porcentage: "80%",
           value: "80"
         },
         {
           id: "Python_skill",
-          content: "Python",
+          content: "Python & Flask",
+          porcentage: "80%",
+          value: "80"
+        },
+        {
+          id: "SQL_skill",
+          content: "PostgreSQL / SQL",
+          porcentage: "80%",
+          value: "80"
+        },
+        {
+          id: "Testing_skill",
+          content: "Jest & React Testing Library",
           porcentage: "75%",
           value: "75"
         },
         {
-          id: "VanillaJS_skill",
-          content: "VanillaJS",
-          porcentage: "85%",
-          value: "85"
-        },
-        {
-          id: "Wordpress_skill",
-          content: "Wordpress",
-          porcentage: "80%",
-          value: "80"
+          id: "Tools_skill",
+          content: "Git, Linux, AWS (basic)",
+          porcentage: "70%",
+          value: "70"
         }
       ],
       about_me: [
         {
           id: "first-p-about",
           content:
-            "Lorem ipsum pariatur consectetur laboris occaecat nulla aliqua irure ad deserunt duis. Eiusmod nulla cupidatat labore sint sit aute dolore irure nostrud ut incididunt. Anim laborum reprehenderit labore magna ut dolore quis irure. Labore ea duis deserunt ullamco irure fugiat deserunt ut nisi ea minim proident. Nisi consectetur do non magna duis aliqua minim minim veniam. In occaecat minim qui consequat elit mollit consectetur non id tempor. Amet adipisicing occaecat tempor culpa quis est duis."
+            "I am Mandy Zhang, a software engineer focused on building clean, reliable React and TypeScript frontends. I have a strong background in data-heavy applications and over ten years of combined experience across energy, AI, and software, which helps me understand complex domains and turn them into intuitive user experiences."
         },
         {
           id: "second-p-about",
           content:
-            "Lorem ipsum pariatur consectetur laboris occaecat nulla aliqua irure ad deserunt duis. Eiusmod nulla cupidatat labore sint sit aute dolore irure nostrud ut incididunt. Anim laborum reprehenderit labore magna ut dolore quis irure. Labore ea duis deserunt ullamco irure fugiat deserunt ut nisi ea minim proident. Nisi consectetur do non magna duis aliqua minim minim veniam. In occaecat minim qui consequat elit mollit consectetur non id tempor. Amet adipisicing occaecat tempor culpa quis est duis."
+            "In recent projects I have built dashboards, labeling tools, and internal platforms using React, TypeScript, Node.js, Python, and PostgreSQL. I care about component reusability, predictable state management, and clear separation of concerns, and I routinely integrate REST or GraphQL APIs, handle async data flows, and work with designers and product managers to ship features."
         },
         {
           id: "third-p-about",
           content:
-            "Lorem ipsum pariatur consectetur laboris occaecat nulla aliqua irure ad deserunt duis. Eiusmod nulla cupidatat labore sint sit aute dolore irure nostrud ut incididunt. Anim laborum reprehenderit labore magna ut dolore quis irure. Labore ea duis deserunt ullamco irure fugiat deserunt ut nisi ea minim proident. Nisi consectetur do non magna duis aliqua minim minim veniam. In occaecat minim qui consequat elit mollit consectetur non id tempor. Amet adipisicing occaecat tempor culpa quis est duis."
+            "I enjoy owning features end to end—from understanding requirements and designing the UX, to implementing, testing, and deploying. I use tools like Git, Jest, React Testing Library, and Linux/WSL in my daily work, and I am always learning new patterns and best practices to write maintainable, production-ready code."
         }
       ]
     };
@@ -79,8 +94,9 @@ class About extends React.Component {
                           style={{ textAlign: "center" }}
                         >
                           <img
+                            src={myImage}
                             className="img-fluid rounded b-shadow-a"
-                            alt=""
+                            alt="Mandy Zhang"
                           />
                         </div>
                       </div>

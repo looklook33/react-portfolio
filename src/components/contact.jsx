@@ -15,9 +15,10 @@ class Contact extends React.Component {
               <div className="contact-mf">
                 <div id="contact" className="box-shadow-full">
                   <div className="row">
+                    {/* 左侧表单 */}
                     <div className="col-md-6">
                       <div className="title-box-2">
-                        <h5 className="title-left">Send A Message</h5>
+                        <h5 className="title-left">Send a Message</h5>
                       </div>
                       <div>
                         <form
@@ -39,7 +40,7 @@ class Contact extends React.Component {
                                   id="name"
                                   placeholder="Your Name"
                                   data-rule="minlen:4"
-                                  data-msg="Please enter at least 4 chars"
+                                  data-msg="Please enter at least 4 characters"
                                 />
                                 <div className="validation"></div>
                               </div>
@@ -67,7 +68,7 @@ class Contact extends React.Component {
                                   id="subject"
                                   placeholder="Subject"
                                   data-rule="minlen:4"
-                                  data-msg="Please enter at least 8 chars of subject"
+                                  data-msg="Please enter at least 8 characters for the subject"
                                 />
                                 <div className="validation"></div>
                               </div>
@@ -79,7 +80,7 @@ class Contact extends React.Component {
                                   name="message"
                                   rows="5"
                                   data-rule="required"
-                                  data-msg="Please write something for us"
+                                  data-msg="Please write a message"
                                   placeholder="Message"
                                 ></textarea>
                                 <div className="validation"></div>
@@ -97,40 +98,37 @@ class Contact extends React.Component {
                         </form>
                       </div>
                     </div>
+
+                    {/* 右侧介绍 + 社交链接 */}
                     <div className="col-md-6">
                       <div className="title-box-2 pt-4 pt-md-0">
                         <h5 className="title-left">Get in Touch</h5>
                       </div>
                       <div className="more-info">
                         <p className="lead">
-                          Whether you want to get in touch, talk about a project
-                          collaboration, or just say hi, I'd love to hear from
-                          you.
-                          <br />
-                          Simply fill the from and send me an email.
+                          Thank you for taking the time to explore my work. I&apos;m
+                          currently open to frontend / React and full-stack
+                          engineering roles, as well as collaborations on
+                          UI-driven products and data-intensive applications.
                         </p>
-                        {/* <!-- <ul class="list-ico">
-                                <li><span class="ion-ios-location"></span> 329 WASHINGTON ST BOSTON, MA 02108</li>
-                                <li><span class="ion-ios-telephone"></span> (617) 557-0089</li>
-                                <li><span class="ion-email"></span> contact@example.com</li>
-                                </ul> --> */}
+                        <p className="lead">
+                          If you&apos;d like to discuss an opportunity, a project
+                          idea, or simply connect, feel free to reach out via
+                          this form, email, or connect with me on LinkedIn and
+                          GitHub.
+                        </p>
+                        <p className="lead">
+                          Email:{" "}
+                          <a href="mailto:gmandy566@gmail.com">
+                            gmandy566@gmail.com
+                          </a>
+                        </p>
                       </div>
                       <div className="socials">
                         <ul>
                           <li>
                             <a
-                              href=""
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              <span className="ico-circle">
-                                <i className="ion-social-codepen"></i>
-                              </span>
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href=""
+                              href="https://github.com/looklook33"
                               target="_blank"
                               rel="noopener noreferrer"
                             >
@@ -141,7 +139,7 @@ class Contact extends React.Component {
                           </li>
                           <li>
                             <a
-                              href=""
+                              href="https://www.linkedin.com/in/minyu-zhang-058b6857/"
                               target="_blank"
                               rel="noopener noreferrer"
                             >
@@ -150,9 +148,17 @@ class Contact extends React.Component {
                               </span>
                             </a>
                           </li>
+                          <li>
+                            <a href="mailto:gmandy566@gmail.com">
+                              <span className="ico-circle">
+                                <i className="ion-email"></i>
+                              </span>
+                            </a>
+                          </li>
                         </ul>
                       </div>
                     </div>
+                    {/* 右侧结束 */}
                   </div>
                 </div>
               </div>
@@ -164,6 +170,7 @@ class Contact extends React.Component {
             <div className="row">
               <div className="col-sm-12">
                 <div className="copyright-box">
+                  {/* 可以在这里加一句小版权或签名 */}
                 </div>
               </div>
             </div>

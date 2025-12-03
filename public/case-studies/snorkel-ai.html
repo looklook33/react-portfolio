@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Snorkel AI – Case Study | Mandy Zhang</title>
+    <meta
+      name="description"
+      content="Snorkel AI multi-stage labeling and dataset dashboard – UI/UX and engineering case study by Mandy Zhang."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- 简单的内联样式，让页面干净一点 -->
+    <style>
+      body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #050816;
+        color: #f5f5f5;
+      }
+
+      .page {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 32px 16px 64px;
+      }
+
+      .badge {
+        display: inline-block;
+        padding: 4px 10px;
+        border-radius: 999px;
+        font-size: 12px;
+        background: rgba(0, 128, 255, 0.2);
+        color: #9bd1ff;
+        margin-bottom: 12px;
+      }
+
+      h1 {
+        font-size: 32px;
+        margin-bottom: 8px;
+      }
+
+      h2 {
+        font-size: 20px;
+        margin-top: 32px;
+        margin-bottom: 8px;
+      }
+
+      h3 {
+        font-size: 16px;
+        margin-top: 20px;
+        margin-bottom: 6px;
+      }
+
+      p {
+        line-height: 1.6;
+        margin-top: 8px;
+        margin-bottom: 8px;
+      }
+
+      ul {
+        margin-top: 4px;
+        margin-bottom: 8px;
+        padding-left: 20px;
+      }
+
+      li {
+        margin-bottom: 4px;
+      }
+
+      .meta {
+        font-size: 14px;
+        color: #b3b3b3;
+        margin-bottom: 16px;
+      }
+
+      .pill-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 6px;
+        margin-bottom: 10px;
+      }
+
+      .pill {
+        font-size: 11px;
+        padding: 3px 8px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      .back-link {
+        display: inline-block;
+        margin-top: 24px;
+        font-size: 14px;
+        color: #66b3ff;
+        text-decoration: none;
+      }
+
+      .back-link:hover {
+        text-decoration: underline;
+      }
+
+      hr {
+        border: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        margin: 24px 0;
+      }
+
+      @media (min-width: 768px) {
+        h1 {
+          font-size: 36px;
+        }
+
+        .meta {
+          font-size: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <span class="badge">Case Study</span>
+      <h1>Snorkel AI – Multi-Stage Labeling & Dataset Dashboard</h1>
+      <p class="meta">
+        Role: Frontend / UI Engineer &nbsp;·&nbsp; Product: Enterprise AI
+        labeling & monitoring platform
+      </p>
+
+      <h2>Overview</h2>
+      <p>
+        Snorkel AI provides an enterprise platform for creating, managing, and
+        monitoring labeled datasets used to train ML models. I worked on the
+        web application used by internal teams and external customers to label
+        data, review quality, and monitor progress across multiple projects.
+      </p>
+      <p>
+        This case study focuses on the multi-stage labeling and dataset
+        dashboard experience: how we designed the workflows, translated them
+        into React components, and iterated based on feedback from ML and data
+        teams.
+      </p>
+
+      <h2>Tech Stack</h2>
+      <div class="pill-row">
+        <span class="pill">React</span>
+        <span class="pill">TypeScript</span>
+        <span class="pill">Redux Toolkit</span>
+        <span class="pill">GraphQL</span>
+        <span class="pill">Node.js</span>
+        <span class="pill">PostgreSQL</span>
+        <span class="pill">Jest</span>
+        <span class="pill">Cypress</span>
+        <span class="pill">Storybook (internal)</span>
+      </div>
+
+      <h2>My Responsibilities</h2>
+      <ul>
+        <li>
+          Worked with product, ML engineers, and designers to define user
+          journeys for annotators, reviewers, and project owners.
+        </li>
+        <li>
+          Designed and implemented React/TypeScript components for labeling
+          queues, review workflows, and project dashboards.
+        </li>
+        <li>
+          Integrated GraphQL APIs and managed client-side state with Redux
+          Toolkit to keep complex UI flows predictable.
+        </li>
+        <li>
+          Wrote unit and integration tests (Jest, React Testing Library,
+          Cypress) and participated in code reviews.
+        </li>
+      </ul>
+
+      <hr />
+
+      <h2>Design Process</h2>
+
+      <h3>1. Understanding the users & workflows</h3>
+      <p>
+        We first mapped out the different roles in the system: annotators who
+        label data, reviewers who check quality, and project owners who monitor
+        progress. Through discussions and feedback sessions, we identified
+        pain-points in the existing tools:
+      </p>
+      <ul>
+        <li>Too many separate screens to complete one labeling task.</li>
+        <li>
+          Hard to see which items were blocked, in review, or ready to ship.
+        </li>
+        <li>
+          Little visibility into label quality and disagreement across
+          annotators.
+        </li>
+      </ul>
+
+      <h3>2. Flow diagrams & wireframes</h3>
+      <p>
+        I worked with the designer to turn these findings into flow diagrams for
+        the end-to-end task:
+      </p>
+      <ul>
+        <li>Pick up a task from the queue.</li>
+        <li>Label and submit, or flag for review.</li>
+        <li>Perform a second-pass review.</li>
+        <li>Surface status and quality in the project dashboard.</li>
+      </ul>
+      <p>
+        We started with low-fidelity wireframes showing a unified “task view”
+        and a simplified project dashboard with clear status segments (Todo / In
+        progress / In review / Done).
+      </p>
+
+      <h3>3. Iterating on the UI</h3>
+      <p>
+        After the first implementation, internal users tested the new flows in
+        real projects. Their feedback led to several improvements:
+      </p>
+      <ul>
+        <li>
+          Added keyboard shortcuts and focused navigation to speed up labeling.
+        </li>
+        <li>
+          Introduced clearer empty states and inline explanations for complex
+          actions (for example, what happens when you “reject” a label).
+        </li>
+        <li>
+          Adjusted the dashboard layout so that key metrics (items labeled,
+          disagreement rate, review backlog) appear above the fold.
+        </li>
+      </ul>
+
+      <hr />
+
+      <h2>Engineering Details</h2>
+      <ul>
+        <li>
+          Built reusable React components for task headers, progress indicators,
+          and action toolbars so different labeling UIs could share common
+          patterns.
+        </li>
+        <li>
+          Used Redux Toolkit slices to manage queue state, filters, and
+          optimistic updates when annotators completed tasks.
+        </li>
+        <li>
+          Connected to GraphQL APIs for project statistics, using normalized
+          caching to keep the dashboard fast and responsive even with large
+          datasets.
+        </li>
+        <li>
+          Wrote tests around critical flows such as “pick task → label → submit”
+          and permission checks for different roles.
+        </li>
+      </ul>
+
+      <h2>Impact & Learnings</h2>
+      <p>
+        The new experience reduced context-switching for annotators, made
+        project status easier to understand for stakeholders, and gave the ML
+        team clearer signals about label quality and backlog. For me, this
+        project reinforced how important it is to:
+      </p>
+      <ul>
+        <li>Design around real workflows, not just individual screens.</li>
+        <li>
+          Keep the React component structure aligned with the mental model of
+          the users.
+        </li>
+        <li>
+          Use small, focused usability sessions to quickly validate UI changes
+          with internal teams.
+        </li>
+      </ul>
+
+      <a class="back-link" href="/react-portfolio/#work">← Back to portfolio</a>
+    </div>
+  </body>
+</html>
