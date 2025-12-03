@@ -714,6 +714,10 @@ PORTFOLIO
 .work-img {
   display: block;
   overflow: hidden;
+  width: 100%;
+  height: 200px;  
+  object-fit: cover;
+  border-radius: 4px;
 }
 
 .work-img img {

@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>ABNB – Airbnb-style Listings & Booking App | Mandy Zhang</title>
+    <meta
+      name="description"
+      content="ABNB – an Airbnb-style listings and booking application. UI/UX and full-stack engineering case study by Mandy Zhang."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #050816;
+        color: #f5f5f5;
+      }
+
+      .page {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 32px 16px 64px;
+      }
+
+      .badge {
+        display: inline-block;
+        padding: 4px 10px;
+        border-radius: 999px;
+        font-size: 12px;
+        background: rgba(0, 128, 255, 0.2);
+        color: #9bd1ff;
+        margin-bottom: 12px;
+      }
+
+      h1 {
+        font-size: 32px;
+        margin-bottom: 8px;
+      }
+
+      h2 {
+        font-size: 20px;
+        margin-top: 32px;
+        margin-bottom: 8px;
+      }
+
+      h3 {
+        font-size: 16px;
+        margin-top: 20px;
+        margin-bottom: 6px;
+      }
+
+      p {
+        line-height: 1.6;
+        margin-top: 8px;
+        margin-bottom: 8px;
+      }
+
+      ul {
+        margin-top: 4px;
+        margin-bottom: 8px;
+        padding-left: 20px;
+      }
+
+      li {
+        margin-bottom: 4px;
+      }
+
+      .meta {
+        font-size: 14px;
+        color: #b3b3b3;
+        margin-bottom: 16px;
+      }
+
+      .pill-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 6px;
+        margin-bottom: 10px;
+      }
+
+      .pill {
+        font-size: 11px;
+        padding: 3px 8px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      .back-link {
+        display: inline-block;
+        margin-top: 24px;
+        font-size: 14px;
+        color: #66b3ff;
+        text-decoration: none;
+      }
+
+      .back-link:hover {
+        text-decoration: underline;
+      }
+
+      hr {
+        border: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        margin: 24px 0;
+      }
+
+      @media (min-width: 768px) {
+        h1 {
+          font-size: 36px;
+        }
+
+        .meta {
+          font-size: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <span class="badge">Case Study</span>
+      <h1>Personal APP Demo – Airbnb-style Listings & Booking App</h1>
+      <p class="meta">
+        Role: Full-Stack / Frontend Engineer &nbsp;·&nbsp; Type: Personal
+        project inspired by Airbnb&apos;s core flows
+      </p>
+
+      <h2>Overview</h2>
+      <p>
+        ABNB is a full-stack web application inspired by Airbnb. It allows users
+        to browse listings, view listing details, manage their own properties,
+        and create bookings. I built this project to practice end-to-end product
+        thinking: from UI layout and interactions to API design, data modeling,
+        and authentication.
+      </p>
+      <p>
+        The focus of this case study is on how I designed the user experience
+        for browsing, booking, and managing stays, and how I implemented those
+        flows with React on the frontend and a RESTful backend.
+      </p>
+
+      <h2>Tech Stack</h2>
+      <div class="pill-row">
+        <span class="pill">React</span>
+        <span class="pill">Redux</span>
+        <span class="pill">React Router</span>
+        <span class="pill">JavaScript (ES6+)</span>
+        <span class="pill">HTML5</span>
+        <span class="pill">CSS3</span>
+        <span class="pill">Flask (Python)</span>
+        <span class="pill">SQLAlchemy</span>
+        <span class="pill">PostgreSQL</span>
+        <span class="pill">REST API</span>
+      </div>
+
+      <h2>Goals</h2>
+      <ul>
+        <li>
+          Recreate core Airbnb flows: browse listings, view details, manage
+          stays, and create bookings.
+        </li>
+        <li>
+          Design a clean, card-based UI that is easy to scan and works well on
+          desktop and tablet.
+        </li>
+        <li>
+          Practice building a full CRUD REST API with auth and relational data
+          (users, listings, bookings, images).
+        </li>
+        <li>
+          Get comfortable with Redux state management and React Router for
+          multi-page navigation.
+        </li>
+      </ul>
+
+      <hr />
+
+      <h2>UI/UX Design Process</h2>
+
+      <h3>1. Mapping the main user journeys</h3>
+      <p>I started by defining the key flows:</p>
+      <ul>
+        <li>Browse all listings from the homepage.</li>
+        <li>Filter and click into an individual listing.</li>
+        <li>
+          Review photos, description, price, and existing reviews on the
+          details page.
+        </li>
+        <li>Choose dates and create a booking (authenticated users only).</li>
+        <li>
+          As a host, create, edit, or delete listings you own, and see associated
+          bookings.
+        </li>
+      </ul>
+      <p>
+        From these journeys, I sketched low-fidelity wireframes: a tiled listing
+        grid, a detail page with a main hero image and key info on the right,
+        and a simple dashboard view for hosts.
+      </p>
+
+      <h3>2. Listing grid & card design</h3>
+      <p>
+        The homepage uses a responsive grid of listing cards. Each card
+        highlights:
+      </p>
+      <ul>
+        <li>Cover photo</li>
+        <li>Location and title</li>
+        <li>Price per night</li>
+        <li>Average rating (if available)</li>
+      </ul>
+      <p>
+        I experimented with different card layouts and hover states to make it
+        clear that each card is clickable, while keeping the design visually
+        simple. This mirrors how real users quickly scan multiple options before
+        deciding where to click.
+      </p>
+
+      <h3>3. Listing detail page</h3>
+      <p>
+        The detail page is designed around a clear information hierarchy:
+        gallery, high-level summary, and details.
+      </p>
+      <ul>
+        <li>Hero image and secondary photo grid</li>
+        <li>Title, location, host info</li>
+        <li>Price, fees, and booking call-to-action</li>
+        <li>Description and amenity list</li>
+        <li>Reviews section (where implemented)</li>
+      </ul>
+      <p>
+        I used a sticky booking panel on larger screens so that users can always
+        see the date picker and price while scrolling through content.
+      </p>
+
+      <h3>4. Auth & host flows</h3>
+      <p>
+        For hosts, I added a simple management view:
+      </p>
+      <ul>
+        <li>Create new listing with title, description, price, and images.</li>
+        <li>Edit existing listings.</li>
+        <li>Delete listings you no longer want to show.</li>
+      </ul>
+      <p>
+        This helped me think through validation, error states, and permissions
+        (only owners can modify their listings).
+      </p>
+
+      <hr />
+
+      <h2>Engineering Details</h2>
+      <ul>
+        <li>
+          Implemented a RESTful backend using Flask and SQLAlchemy, modeling
+          users, listings, bookings, and images with relational tables.
+        </li>
+        <li>
+          Built authentication (sign up, log in, protected routes) so users can
+          create bookings and manage their own content.
+        </li>
+        <li>
+          Used React + Redux for global state: current user, listings data,
+          booking information, and UI loading/error states.
+        </li>
+        <li>
+          Used React Router to implement nested routes for listing details and
+          user dashboards.
+        </li>
+        <li>
+          Added form validation on both frontend and backend to prevent invalid
+          bookings (for example, overlapping dates or missing required fields).
+        </li>
+      </ul>
+
+      <h2>Challenges & Learnings</h2>
+      <p>
+        One of the main challenges was keeping the data model and UI in sync:
+        when a user edits or deletes a listing, the changes need to appear
+        immediately across different views (home page, detail page, host
+        dashboard). Redux helped centralize this logic and made the UI more
+        predictable.
+      </p>
+      <p>
+        The project was also a good exercise in designing clear, opinionated
+        flows without copying Airbnb pixel by pixel. I focused on understanding
+        why certain UX patterns work (like sticky booking panels and clean card
+        layouts) and then re-implementing them in my own way.
+      </p>
+
+      <h2>Repository & Code</h2>
+      <p>
+        The full source code for ABNB is available on GitHub:
+        <br />
+        <a
+          href="https://github.com/looklook33/ABNB-Project"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          https://github.com/looklook33/ABNB-Project
+        </a>
+      </p>
+
+      <a class="back-link" href="/react-portfolio/#work">← Back to portfolio</a>
+    </div>
+  </body>
+</html>

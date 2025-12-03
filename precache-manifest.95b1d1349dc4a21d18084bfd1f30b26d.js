@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a0a3af67caebe1b445c44b7557586dcb",
+    "revision": "7b0d9ea4dedfe0cf7c8ac45b86b8bfda",
     "url": "/react-portfolio/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/react-portfolio/static/css/2.d873f301.chunk.css"
   },
   {
-    "revision": "cfc37e355330a48471b3",
-    "url": "/react-portfolio/static/css/main.534f6a83.chunk.css"
+    "revision": "a8713a9ecd843b6329d9",
+    "url": "/react-portfolio/static/css/main.fb5e1863.chunk.css"
   },
   {
     "revision": "6e81946a4d654caf3ae6",
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/react-portfolio/static/js/2.f42dcde3.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "cfc37e355330a48471b3",
-    "url": "/react-portfolio/static/js/main.37427f44.chunk.js"
+    "revision": "a8713a9ecd843b6329d9",
+    "url": "/react-portfolio/static/js/main.069aaa4f.chunk.js"
   },
   {
     "revision": "624bfe83ca615183ba8a",
@@ -68,8 +68,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/react-portfolio/static/media/image4.0b37f434.jpg"
   },
   {
-    "revision": "8d16c4aff0e7bd3db1b8bab9619aea9c",
-    "url": "/react-portfolio/static/media/image5.8d16c4af.jpg"
+    "revision": "af17ba76b19f66a986192da98d458c48",
+    "url": "/react-portfolio/static/media/image5.af17ba76.jpg"
   },
   {
     "revision": "62b7cc7591147260c113823ded8f6901",
@@ -92,15 +92,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/react-portfolio/static/media/ionicons.621bd386.svg"
   },
   {
-    "revision": "a82ab1cd3c28c0a07a4932d57176cb88",
-    "url": "/react-portfolio/static/media/male.a82ab1cd.png"
+    "revision": "fec5fb8248006687ce925f5d59cfea4a",
+    "url": "/react-portfolio/static/media/male.fec5fb82.png"
   },
   {
-    "revision": "3ec3891b37f8b0765b554f10806f0b3f",
-    "url": "/react-portfolio/static/media/male1.3ec3891b.png"
+    "revision": "245200b4a5b497c17b3535429d202954",
+    "url": "/react-portfolio/static/media/male1.245200b4.png"
   },
   {
-    "revision": "17d8247260c11831bbd04893568f929b",
-    "url": "/react-portfolio/static/media/myImage.17d82472.png"
+    "revision": "45faf83d45af2f195470871ee7ae7c43",
+    "url": "/react-portfolio/static/media/myImage.45faf83d.png"
   }
 ]);
